@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="1280" height="803" viewBox="0 0 1280 803">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #3fbcb3;
+      }
+
+      .cls-4 {
+        fill: #a3cc14;
+      }
+
+      .cls-5 {
+        fill: #539eec;
+      }
+
+      .cls-6 {
+        fill: #d349a3;
+      }
+
+      .cls-7 {
+        fill: #ce3613;
+      }
+
+      .cls-9 {
+        fill: #000000;
+        opacity: 0.28;
+      }
+
+      .cls-12 {
+        fill: #2c3c4c;
+      }
+
+      .cls-14 {
+        fill: #ffffff;
+      }
+
+      .cls-21 {
+        font-size: 30px;
+      }
+
+      .cls-22 {
+        fill: #ffffff;
+        font-size: 30px;
+        font-family: 'Open Sans Light','Helvetica', sans-serif;
+        text-transform: uppercase;
+      }
+
+      .cls-40 {
+        fill: #ffffff;
+        text-anchor: middle;
+        font-size: 30px;
+        font-family: 'Open Sans Light','Helvetica', sans-serif;
+      }
+    </style>
+  </defs>
+  <g id="dist2svg">
+    <rect id="rect-1" class="cls-3" y="2" width="1280" height="800"/>
+    <rect id="rect-2" class="cls-4" y="529" width="1280" height="273"/>
+    <rect id="rect-3" class="cls-5" y="112" width="1280" height="204"/>
+    <rect id="rect-4" class="cls-6" width="1280" height="204"/>
+    <rect id="rect-5" class="cls-7" y="315" width="1280" height="204"/>
+    <g id="group-2">
+      <rect id="rect-6" class="cls-9" x="894" y="335" width="262" height="104"/>
+    </g>
+    <rect id="rect-7" class="cls-12" y="204" width="1280" height="10"/>
+    <rect id="rect-8" class="cls-12" y="519" width="1280" height="10"/>
+    <rect id="rect-9" class="cls-14" x="509" y="100" width="3" height="104"/>
+    <rect id="rect-10" class="cls-14" x="777" y="100" width="3" height="104"/>
+    <rect id="rect-11" class="cls-14" x="509" y="643" width="3" height="160"/>
+    <rect id="rect-12" class="cls-14" x="777" y="643" width="3" height="160"/>
+    <g id="group-1-copy">
+      <text class="cls-21" x="475px" y="271px"><tspan class="cls-22">BUILD &amp; DEPLOYMENT</tspan></text>
+      <text class="cls-21" x="615px" y="597px"><tspan class="cls-22">GIT</tspan></text>
+      <text class="cls-21" x="609px" y="379px"><tspan class="cls-22">NPM</tspan></text>
+      <text class="cls-21" x="310px" y="163px"><tspan class="cls-22">Feature</tspan></text>
+      <text class="cls-21" x="603px" y="163px"><tspan class="cls-22">BETA</tspan></text>
+      <text class="cls-21" x="882px" y="163px"><tspan class="cls-22">LIVE</tspan></text>
+      <text class="cls-21" x="310px" y="729px"><tspan class="cls-22">Feature</tspan></text>
+      <text class="cls-21" x="603px" y="729px"><tspan class="cls-22">BETA</tspan></text>
+      <text class="cls-21" x="882px" y="729px"><tspan class="cls-22">LIVE</tspan></text>
+      <text class="cls-21" x="271px" y="379px"><tspan x="272px" class="cls-40">MODULE</tspan><tspan dy="1.2em" x="272px" class="cls-40">v0.2.4</tspan></text>
+      <text class="cls-21" x="1023px" y="379px"><tspan x="1024px" class="cls-40">MODULE</tspan><tspan dy="1.2em" x="1024px" class="cls-40">v0.1.2</tspan></text>
+      <text class="cls-21" x="509px" y="447px"><tspan x="510px" class="cls-40">MODULE</tspan><tspan dy="1.2em" x="510px" class="cls-40">v0.2.1</tspan></text>
+      <text class="cls-21" x="778px" y="448px"><tspan x="779px" class="cls-40">MODULE</tspan><tspan dy="1.2em" x="779px" class="cls-40">v0.1.1</tspan></text>
+    </g>
+  </g>
+</svg>
