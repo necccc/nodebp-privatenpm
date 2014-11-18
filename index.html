@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Private NPM - What can you do with your own NPM registry</title>
+		<title>Private npm - What can you do with your own npm registry</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -43,8 +43,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides" >
 				<section data-background="#eeece4" class="light">
-					<h1>Private NPM</h1>
-					<p>What can you do with your own NPM registry</p>
+					<h1>Private npm</h1>
+					<p>What can you do with your own npm registry</p>
 					<p>
 						<small></small>
 					</p>
@@ -80,8 +80,11 @@
 
 				<section data-background="#eeece4"  class="light">
 
-					<h1>NPM</h1>
+					<h1>npm</h1>
 
+					<aside class="notes">
+						i'm pretty sure here everyone knows or uses npm
+					</aside>
 
 					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 						<g id="icomoon-ignore">
@@ -93,7 +96,7 @@
 
 						<section data-background="#eeece4"  class="light">
 
-							<h2>NPM</h2>
+							<h2>npm</h2>
 
 							<p>Public and open ecosystem of open source modules</p>
 							<p>Has several public mirrors</p>
@@ -107,9 +110,9 @@
 
 						</section>
 
-						<section data-background="#eeece4"  class="light">
+						<section data-background="#eeece4" class="light">
 
-							<h2>NPM is GREAT</h2>
+							<h2>npm is GREAT</h2>
 
 							<p>but "what if"</p>
 
@@ -130,7 +133,7 @@
 
 				<section data-background="#f28a2e" class="orange">
 
-					<h1>Private NPM registry</h1>
+					<h1>Private npm registry</h1>
 
 					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 						<g id="icomoon-ignore">
@@ -152,6 +155,15 @@
 								</em>
 							</p>
 
+							<aside class="notes">
+
+
+								in a recent blog post, she asked us not to, but still "what if"
+
+
+
+							</aside>
+
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
 								</g>
@@ -163,7 +175,7 @@
 
 						<section data-background="#f28a2e" class="orange">
 
-							<h2>Private NPM registries</h2>
+							<h2>Private npm registries</h2>
 
 							<table>
 								<thead>
@@ -251,10 +263,14 @@
 
 						<section data-background="#f28a2e" class="orange">
 
-							<h2>Netops requirement</h2>
+							<h2>Sysop requirement</h2>
 
 							<p>“what happens when an npm install dies<br/> during a major deployment?”</p>
 							<p class="fragment">“we're f**ked”</p>
+
+							<aside class="notes">
+								our sysops came and wanted extra availability
+							</aside>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
@@ -269,6 +285,11 @@
 							<h1>Sinopia</h1>
 
 							<p><a href="https://github.com/rlidwka/sinopia">github.com/rlidwka/sinopia</a></p>
+
+
+							<aside class="notes">
+								after a bit of a search and try, we chose sinopia
+							</aside>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
@@ -286,7 +307,6 @@
 								<li>caching registry</li>
 								<li>use with chef/docker</li>
 								<li>simple storage</li>
-								<li>use a naming convention to prevent conflicts</li>
 							</ul>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -330,6 +350,12 @@
 
 							<p>since npm 1.5-alpha (v2.0.0) users can <br/>scope credentials to different registries</p>
 
+							<aside class="notes">
+								users can use npm adduser to log in to the registry, they user whatever credential they want,
+								then we set those users we want to give publish rights to the private reg
+
+								this is possible because of the npm 1.5 or later, 2.0
+							</aside>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
@@ -355,6 +381,11 @@
 								<br />
 								use ‘publishConfig’
 							</p>
+
+							<aside class="notes">
+								you can set a project to use a private reg several ways
+							</aside>
+
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
@@ -427,9 +458,9 @@
 							<p>private modules</p>
 							<p class="fragment">(obviously)</p>
 
-<aside class="notes">
-	npm HAS a private setting in package.json, but to prevent you from accidental npm publish
-</aside>
+							<aside class="notes">
+								actually npm HAS a private setting in package.json, but only to prevent you from accidental npm publish
+							</aside>
 
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -449,6 +480,13 @@
 
 							<p>Versioned configuration modules</p>
 
+							<aside class="notes">
+								you can do your own modules in your infrastructure,
+								for example your microservices
+
+								use distribution and version tags
+							</aside>
+
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
@@ -466,6 +504,9 @@
 							<p>Not just backend modules</p>
 							<p>Front-end module registry</p>
 
+							<aside class="notes">
+								why not? store anything that javascript in npm
+							</aside>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
@@ -482,10 +523,13 @@
 
 							<p>Prepare for the open source world</p>
 
-							<p>Test, use, then go open source</p>
+							<p class="fragment">Test, use, then go open source</p>
+							<p class="fragment">Get used to the tools, workflow and mindset</p>
 
 							<aside class="notes">
 								use and test your modules, even in production before hardening them and adding them to the public registry
+
+								not just code, but the workflow and mindset too, that is common with opensourced and maintained npm modules
 							</aside>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -514,18 +558,6 @@
 							<h2>Configuration management and distribution</h2>
 
 							<p>This is how we distribute configurations for our node apps</p>
-
-							versioned configurations
-
-
-							our SCM acts as a full deployment system, git commits trigger code build and deployment
-
-							different ackage jsons
-							pointingto correct configuratin modules
-
-
-							workflow:
-							update config module to 1.1, push to npm, update version in corrent packagejson on feature, push to git, scm does build, npm scripts, done
 
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -601,7 +633,18 @@
 
 							<h2>Configuration management and distribution</h2>
 
-							<p>Works with Modules, <br />or even better: <br>Configurations</p>
+							<p>Works with Modules,
+								<br />or even better:
+								<br>Configurations
+							</p>
+
+							<aside class="notes">
+
+								we've created configuration modules for our apps, that handle context,
+								updated via npm
+
+							</aside>
+
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
@@ -618,11 +661,11 @@
 
 								<p>Internal ‘bower’ using our private npm registry</p>
 
-								<p>Front-end libs and deps from npm to a flat dep tree</p>
+								<p>Flat dep tree</p>
 
-								<p>cli, or using package.json</p>
+								<p>cli, or package.json</p>
 
-								<p>This is also a problem at NPM</p>
+								<p>This is also a problem at npm</p>
 
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -672,17 +715,106 @@
 
 						<h2>The Future</h2>
 
-						<p>NPM is working on this!</p>
+						<p>npm is working on this!</p>
 						<ul>
-							<li>scoped packages (prefixed with your org)</li>
-							<li>NPMe (as enterprise)</li>
+							<li class="fragment">scoped packages (prefixed with your org)</li>
 						</ul>
+
+						<aside class="notes">
+
+							started with scoped packages, which set a scope, similar to a namespace, prefixed to every module that belonged to an organisation
+							<br>
+							<br>
+							scopes elliminates the module name conflict issues with other registries
+							<br>
+							<br>
+							then npme gone public
+
+							npme auth plugins for your organization
+
+
+						</aside>
 
 						<svg class="background-svg"  style="width: 95%;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="481" height="188" viewBox="0 0 481 188">
 							<g id="icomoon-ignore">
 							</g>
 								<path d="M0,0 L500,0 L500,168 L250,168 L250,195 L139,195 L139,168 L0,168 Z M28.304251,139.493165 L83.536238,139.49349 L83.5362388,55.5592922 L111.304251,55.5592922 L111.304251,139.493491 L138.822477,139.493491 L138.822477,28.4929443 L28.304251,28.4929443 Z M166.333333,28 L166.666667,168 L221.666667,168 L221.666667,140.067308 L277.345845,140.067308 L277.345845,28 Z M221,55 L250,55 L250,112 L221,112 Z M305.333333,28 L305.333333,139 L360.664651,139 L360.664651,55.666008 L388.33133,55.666008 L388.33133,139.000547 L415.967888,139.000547 L415.967888,56 L443.664659,56 L443.664659,139 L471.338699,139 L471.338699,28 Z M305.333333,28" id="Rectangle 1" fill="#CD3632"></path>
 						</svg>
+
+					</section>
+
+					<section data-background="#eeece4" class="light">
+
+						<h2>npme</h2>
+
+						<p>npme (as enterprise)</p>
+
+						<ul>
+							<li class="fragment">you host it, your uptime, sec, policy, etc... <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">selective mirror <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">OAuth2 auth, more is coming <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">developed by npm - no feature lag <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">still in trial <img src="svg/close.svg" class="checkin fragment"></li>
+						</ul>
+
+						<aside class="notes">
+
+
+							then npme gone public
+							<br>
+							<br>
+							us just use npm, like before, check
+							<br>
+							<br>
+							self hosted, you deal with uptime, availability, security, policies, etcetc , check
+							<br>
+							<br>
+							mirrors only what is needed, check
+							<br>
+							<br>
+							Oauth2 authentication, you can write auth plugins for your org, but many supported auth is on the way
+							<br>
+							<br>
+							it's developed by npm, so there's no feature lag, what's new in npm, will also be available in here
+							<br>
+							<br>
+							err, it's not ready yet
+
+
+						</aside>
+
+						<svg class="background-svg"  style="width: 95%;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="481" height="188" viewBox="0 0 481 188">
+							<g id="icomoon-ignore">
+							</g>
+							<path d="M0,0 L500,0 L500,168 L250,168 L250,195 L139,195 L139,168 L0,168 Z M28.304251,139.493165 L83.536238,139.49349 L83.5362388,55.5592922 L111.304251,55.5592922 L111.304251,139.493491 L138.822477,139.493491 L138.822477,28.4929443 L28.304251,28.4929443 Z M166.333333,28 L166.666667,168 L221.666667,168 L221.666667,140.067308 L277.345845,140.067308 L277.345845,28 Z M221,55 L250,55 L250,112 L221,112 Z M305.333333,28 L305.333333,139 L360.664651,139 L360.664651,55.666008 L388.33133,55.666008 L388.33133,139.000547 L415.967888,139.000547 L415.967888,56 L443.664659,56 L443.664659,139 L471.338699,139 L471.338699,28 Z M305.333333,28" id="Rectangle 1" fill="#CD3632"></path>
+						</svg>
+
+					</section>
+
+					<section data-background="#eeece4" class="light">
+
+						<h2>npme</h2>
+
+						<p>It's not free</p>
+
+						<p class="fragment">Support npm, use a good solution</p>
+
+						<p class="fragment"><small>no price information yet</small></p>
+
+						<aside class="notes">
+							it's not free, but if you think about it, npminc has to pay their bills, and keep npm up and running,
+							<br>
+							<br>
+							so if your org can afford it, consider this as support, giving back to them, in which, gives you somethig useful in return
+
+						</aside>
+
+						<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+							<g id="icomoon-ignore">
+							</g>
+							<path d="M29 4h-26c-1.65 0-3 1.35-3 3v18c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-18c0-1.65-1.35-3-3-3zM3 6h26c0.542 0 1 0.458 1 1v3h-28v-3c0-0.542 0.458-1 1-1zM29 26h-26c-0.542 0-1-0.458-1-1v-9h28v9c0 0.542-0.458 1-1 1zM4 20h2v4h-2zM8 20h2v4h-2zM12 20h2v4h-2z" fill="#000000"></path>
+						</svg>
+
 
 					</section>
 

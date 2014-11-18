@@ -98,6 +98,20 @@ $progressColor: #fff;
 // 	@include radial-gradient( rgba($base3,1), rgba(lighten($base3, 20%),1) );
 // }
 
+.reveal section p img,
+.reveal section li img {
+  border: none;
+  box-shadow: none;
+  margin: 0 5px;
+}
+
+img.checkin {
+  position: absolute;
+  left: 0;
+
+}
+
+
 .background-svg {
   position: absolute;
   width: 84%;
