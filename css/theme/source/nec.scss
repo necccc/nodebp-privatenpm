@@ -59,7 +59,7 @@ $mainColor: $foregroundColor01;
 $headingColor: $foregroundColor01;
 $headingTextShadow: none;
 $backgroundColor: $backgroundColor01;
-$linkColor: $blue;
+$linkColor: #fff;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: $magenta;
 
@@ -79,6 +79,10 @@ $progressColor: #fff;
   p {
     color: $foregroundColor02;
     text-shadow: none;
+  }
+
+  a {
+    color: #38f;
   }
 }
 
