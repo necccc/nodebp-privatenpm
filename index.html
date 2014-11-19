@@ -444,6 +444,16 @@
 
 							</code></pre>
 
+							<aside class="notes">
+								its as easy as you would do it with the regular npm, just publish,
+								<br>
+								if the module you're publishing is bound to the private registry (npmrc or publishconfig), it will be available only there
+								<br>
+								<br>
+								unpublishing is also done the same way npm does, and if you use the --force parameter,
+								you can purge cached public modules from the sinopia mirror
+							</aside>
+
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
 								</g>
@@ -461,6 +471,19 @@
 								Ours only accessible <br>from a well defined domain / ip pool
 							</p>
 
+
+							<aside class="notes">
+
+								the only security setting sinopia itself has, was mentioned before, when i was talking about authenticaton:
+								<br>
+								you can tell which users can publish modules to the sinopia registry
+								<br>
+								but apart from this, anyone can access the server, even your private modules published on it
+								<br>
+								so for security reasons, we allow access to it only from our company ip pool,
+								so we, and the deployment servers can use it
+
+							</aside>
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
 								</g>
@@ -509,15 +532,22 @@
 
 							<h2>you can do...</h2>
 
-							<p>Configuration management and distribution</p>
+							<p>Versioned modules for deployment </p>
+							<p class="fragment">Configuration management and distribution</p>
 
-							<p>Versioned configuration modules</p>
 
 							<aside class="notes">
 								you can do your own modules in your infrastructure,
-								for example your microservices
+								<br>
+								for example for your microservices,
+								and you can handle several versions and tags over a development and deployment cycle
 
-								use distribution and version tags
+								<br>
+								<br>
+
+								you can also create versioned configuration modules, and distribute them with your npm,
+								later on i'll show you an example, how we do this here
+
 							</aside>
 
 
