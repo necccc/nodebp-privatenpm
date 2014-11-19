@@ -1,52 +1,941 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 	<head>
-
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>reveal.js - The HTML Presentations Framework</title>
 
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/main.css">
+		<title>Private npm - What can you do with your own npm registry</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/nec.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
 
 		<!--[if lt IE 9]>
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-
 	</head>
+
 	<body>
-		<div class="wrapper">
 
-			<header>
+		<div class="reveal">
 
-				<h1>reveal.js</h1>
-				<p>
-					The HTML Presentation Framework &mdash; Site coming soon
-				</p>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" >
+				<section data-background="#eeece4" class="light">
+					<h1>Private npm</h1>
+					<p>What can you do with your own npm registry</p>
+					<p>
+						<small></small>
+					</p>
 
-			</header>
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M18.5 14h-0.5v-6c0-3.308-2.692-6-6-6h-4c-3.308 0-6 2.692-6 6v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v15c0 0.825 0.675 1.5 1.5 1.5h17c0.825 0 1.5-0.675 1.5-1.5v-15c0-0.825-0.675-1.5-1.5-1.5zM12 28h-4l0.87-4.35c-0.525-0.36-0.87-0.965-0.87-1.65 0-1.105 0.895-2 2-2s2 0.895 2 2c0 0.685-0.345 1.29-0.87 1.65l0.87 4.35zM14 14h-8v-6c0-1.103 0.897-2 2-2h4c1.103 0 2 0.897 2 2v6z" fill="#000000"></path>
+					</svg>
 
-			<footer>
 
-				<p>
-					<a href="http://lab.hakim.se/reveal-js">Try the demo</a>
-					<a href="https://github.com/hakimel/reveal.js/releases">Download</a>
-				</p>
+				</section>
 
-			</footer>
+				<section data-background="#eeece4" class="light">
+					<h1>Hello</h1>
+
+					<p>I'm Szabolcs Szabolcsi-Toth</p>
+
+
+					<p>Senior Front-end Engineer @ Ustream</p>
+					<p>
+						<a href="https://twitter.com/_Nec">@_Nec</a>
+					</p>
+
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M16 32c8.837 0 16-7.163 16-16s-7.163-16-16-16-16 7.163-16 16 7.163 16 16 16zM16 3c7.18 0 13 5.82 13 13s-5.82 13-13 13-13-5.82-13-13 5.82-13 13-13zM8 10c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM20 10c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM22.003 19.602l2.573 1.544c-1.749 2.908-4.935 4.855-8.576 4.855s-6.827-1.946-8.576-4.855l2.573-1.544c1.224 2.036 3.454 3.398 6.003 3.398s4.779-1.362 6.003-3.398z" fill="#000000"></path>
+					</svg>
+
+
+				</section>
+
+				<section data-background="#eeece4"  class="light">
+
+					<h1>npm</h1>
+
+					<aside class="notes">
+						i'm pretty sure here everyone knows or uses npm
+					</aside>
+
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M27.314 4.686c3.022 3.022 4.686 7.040 4.686 11.314s-1.664 8.292-4.686 11.314c-3.022 3.022-7.040 4.686-11.314 4.686s-8.292-1.664-11.314-4.686c-3.022-3.022-4.686-7.040-4.686-11.314s1.664-8.292 4.686-11.314c3.022-3.022 7.040-4.686 11.314-4.686s8.292 1.664 11.314 4.686zM25.899 25.9c1.971-1.971 3.281-4.425 3.821-7.096-0.421 0.62-0.824 0.85-1.073-0.538-0.257-2.262-2.335-0.817-3.641-1.621-1.375 0.927-4.466-1.802-3.941 1.276 0.81 1.388 4.375-1.858 2.598 1.079-1.134 2.050-4.145 6.592-3.753 8.946 0.049 3.43-3.504 0.715-4.729-0.422-0.824-2.279-0.281-6.262-2.434-7.378-2.338-0.102-4.344-0.314-5.25-2.927-0.545-1.87 0.58-4.653 2.584-5.083 2.933-1.843 3.98 2.158 6.731 2.232 0.854-0.894 3.182-1.178 3.375-2.18-1.805-0.318 2.29-1.517-0.173-2.199-1.358 0.16-2.234 1.409-1.512 2.467-2.632 0.614-2.717-3.809-5.247-2.414-0.064 2.206-4.132 0.715-1.407 0.268 0.936-0.409-1.527-1.594-0.196-1.379 0.654-0.036 2.854-0.807 2.259-1.325 1.225-0.761 2.255 1.822 3.454-0.059 0.866-1.446-0.363-1.713-1.448-0.98-0.612-0.685 1.080-2.165 2.573-2.804 0.497-0.213 0.973-0.329 1.336-0.296 0.752 0.868 2.142 1.019 2.215-0.104-1.862-0.892-3.915-1.363-6.040-1.363-3.051 0-5.952 0.969-8.353 2.762 0.645 0.296 1.012 0.664 0.39 1.134-0.483 1.439-2.443 3.371-4.163 3.098-0.893 1.54-1.482 3.238-1.733 5.017 1.441 0.477 1.773 1.42 1.464 1.736-0.734 0.64-1.185 1.548-1.418 2.541 0.469 2.87 1.818 5.515 3.915 7.612 2.644 2.644 6.16 4.1 9.899 4.1s7.255-1.456 9.899-4.1z" fill="#000000"></path>
+					</svg>
+
+				</section>
+
+						<section data-background="#eeece4"  class="light">
+
+							<h2>npm</h2>
+
+							<p>Public and open ecosystem of open source modules</p>
+							<p>Has several public mirrors</p>
+
+
+							<aside class="notes">
+								over 100000 modules in the registry, some of them is not written by tj holowaychuk substack or mr tarr :)
+								<br >
+								<br >
+								it somewhat distributed, as some ppl made mirrors over the world
+							</aside>
+
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M27.314 4.686c3.022 3.022 4.686 7.040 4.686 11.314s-1.664 8.292-4.686 11.314c-3.022 3.022-7.040 4.686-11.314 4.686s-8.292-1.664-11.314-4.686c-3.022-3.022-4.686-7.040-4.686-11.314s1.664-8.292 4.686-11.314c3.022-3.022 7.040-4.686 11.314-4.686s8.292 1.664 11.314 4.686zM25.899 25.9c1.971-1.971 3.281-4.425 3.821-7.096-0.421 0.62-0.824 0.85-1.073-0.538-0.257-2.262-2.335-0.817-3.641-1.621-1.375 0.927-4.466-1.802-3.941 1.276 0.81 1.388 4.375-1.858 2.598 1.079-1.134 2.050-4.145 6.592-3.753 8.946 0.049 3.43-3.504 0.715-4.729-0.422-0.824-2.279-0.281-6.262-2.434-7.378-2.338-0.102-4.344-0.314-5.25-2.927-0.545-1.87 0.58-4.653 2.584-5.083 2.933-1.843 3.98 2.158 6.731 2.232 0.854-0.894 3.182-1.178 3.375-2.18-1.805-0.318 2.29-1.517-0.173-2.199-1.358 0.16-2.234 1.409-1.512 2.467-2.632 0.614-2.717-3.809-5.247-2.414-0.064 2.206-4.132 0.715-1.407 0.268 0.936-0.409-1.527-1.594-0.196-1.379 0.654-0.036 2.854-0.807 2.259-1.325 1.225-0.761 2.255 1.822 3.454-0.059 0.866-1.446-0.363-1.713-1.448-0.98-0.612-0.685 1.080-2.165 2.573-2.804 0.497-0.213 0.973-0.329 1.336-0.296 0.752 0.868 2.142 1.019 2.215-0.104-1.862-0.892-3.915-1.363-6.040-1.363-3.051 0-5.952 0.969-8.353 2.762 0.645 0.296 1.012 0.664 0.39 1.134-0.483 1.439-2.443 3.371-4.163 3.098-0.893 1.54-1.482 3.238-1.733 5.017 1.441 0.477 1.773 1.42 1.464 1.736-0.734 0.64-1.185 1.548-1.418 2.541 0.469 2.87 1.818 5.515 3.915 7.612 2.644 2.644 6.16 4.1 9.899 4.1s7.255-1.456 9.899-4.1z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+						<section data-background="#eeece4" class="light">
+
+							<h2>npm is GREAT</h2>
+
+							<p>but "what if"</p>
+
+							<ul>
+								<li class="fragment">you want to do sensitive stuff</li>
+								<li class="fragment">you want to do proprietary stuff</li>
+								<li class="fragment">you want to use npm, but internally distribute modules</li>
+								<li class="fragment">you don’t trust availability</li>
+							</ul>
+
+
+							<aside class="notes">
+
+								<ul>
+									<li>you want to do sensitive stuff</li>
+									<li>you want to do proprietary stuff</li>
+									<li>you want to use npm, but internally distribute modules</li>
+									<li>you don’t trust availability</li>
+								</ul>
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M14 22h4v4h-4zM22 8c1.105 0 2 0.895 2 2v6l-6 4h-4v-2l6-4v-2h-10v-4h12zM16 3c-3.472 0-6.737 1.352-9.192 3.808s-3.808 5.72-3.808 9.192c0 3.472 1.352 6.737 3.808 9.192s5.72 3.808 9.192 3.808c3.472 0 6.737-1.352 9.192-3.808s3.808-5.72 3.808-9.192c0-3.472-1.352-6.737-3.808-9.192s-5.72-3.808-9.192-3.808zM16 0v0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-8.837 0-16-7.163-16-16s7.163-16 16-16z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+				<section data-background="#f28a2e" class="orange">
+
+					<h1>Private npm registry</h1>
+
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M22 0h-12l-6 4v8h24v-8l-6-4zM20 10h-2v-1.333c0-0.367-0.3-0.667-0.667-0.667h-2.667c-0.367 0-0.667 0.3-0.667 0.667v1.333h-2v-3.333c0-0.367 0.3-0.667 0.667-0.667h6.667c0.367 0 0.667 0.3 0.667 0.667v3.333zM4 22h24v-8h-24v8zM12 16.667c0-0.367 0.3-0.667 0.667-0.667h6.667c0.367 0 0.667 0.3 0.667 0.667v3.333h-2v-1.333c0-0.367-0.3-0.667-0.667-0.667h-2.667c-0.367 0-0.667 0.3-0.667 0.667v1.333h-2v-3.333zM4 32h24v-8h-24v8zM12 26.667c0-0.367 0.3-0.667 0.667-0.667h6.667c0.367 0 0.667 0.3 0.667 0.667v3.333h-2v-1.333c0-0.367-0.3-0.667-0.667-0.667h-2.667c-0.367 0-0.667 0.3-0.667 0.667v1.333h-2v-3.333z" fill="#000000"></path>
+					</svg>
+
+				</section>
+
+						<section data-background="#f28a2e" class="orange">
+
+							<blockquote cite="http://blog.npmjs.org/post/101775448305/npm-and-front-end-packaging">
+								“Don’t run your own registry, use ours”
+							</blockquote>
+
+							<p>
+								<em>
+									Laurie Voss
+								</em>
+							</p>
+
+							<aside class="notes">
+
+
+								in a recent blog post, she asked us not to, but still the questions "what if" and "why not" bothered me
+
+
+
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM14 6h4v4h-4v-4zM20 26h-8v-2h2v-8h-2v-2h6v10h2v2z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+						<section data-background="#f28a2e" class="orange">
+
+							<h2>Private npm registries</h2>
+
+							<table>
+								<thead>
+									<tr>
+										<th>Full mirror</th>
+										<th>Caching</th>
+									</tr>
+								</thead>
+								<tbody>
+
+									<tr class="fragment">
+										<td>GBytes of data</td>
+										<td>Only what needed</td>
+									<tr>
+
+								</tbody>
+							</table>
+
+							<aside class="notes">
+
+
+								full mirror<br />
+								tens of GBytes of data, contains every module, every version<br>
+								caching registry<br>
+								caches only what you need, for a given amount of time<br>
+<br>
+<br>
+								both can handle your own packages
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M22 0h-12l-6 4v8h24v-8l-6-4zM20 10h-2v-1.333c0-0.367-0.3-0.667-0.667-0.667h-2.667c-0.367 0-0.667 0.3-0.667 0.667v1.333h-2v-3.333c0-0.367 0.3-0.667 0.667-0.667h6.667c0.367 0 0.667 0.3 0.667 0.667v3.333zM4 22h24v-8h-24v8zM12 16.667c0-0.367 0.3-0.667 0.667-0.667h6.667c0.367 0 0.667 0.3 0.667 0.667v3.333h-2v-1.333c0-0.367-0.3-0.667-0.667-0.667h-2.667c-0.367 0-0.667 0.3-0.667 0.667v1.333h-2v-3.333zM4 32h24v-8h-24v8zM12 26.667c0-0.367 0.3-0.667 0.667-0.667h6.667c0.367 0 0.667 0.3 0.667 0.667v3.333h-2v-1.333c0-0.367-0.3-0.667-0.667-0.667h-2.667c-0.367 0-0.667 0.3-0.667 0.667v1.333h-2v-3.333z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+						<section data-background="#f28a2e" class="orange">
+
+							<h2>Our usecase at Ustream</h2>
+
+							<svg class="background-svg"
+								style="height: 1000%; top: -336%; right: -40%;"
+
+							   xmlns:dc="http://purl.org/dc/elements/1.1/"
+							   xmlns:cc="http://creativecommons.org/ns#"
+							   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+							   xmlns:svg="http://www.w3.org/2000/svg"
+							   xmlns="http://www.w3.org/2000/svg"
+							   viewBox="0 0 960 960"
+
+							   xml:space="preserve"
+							   version="1.1"
+							   id="svg2"><metadata
+								 id="metadata8"><rdf:RDF><cc:Work
+									 rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+									   rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+								 id="defs6"><clipPath
+								   id="clipPath18"
+								   clipPathUnits="userSpaceOnUse"><path
+									 id="path20"
+									 d="M 0,768 768,768 768,0 0,0 0,768 Z" /></clipPath></defs><g
+								 transform="matrix(1.25,0,0,-1.25,0,960)"
+								 id="g10"><path
+								   id="path12"
+								   style="fill:#f28a2e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+								   d="M 0,0 768,0 768,768 0,768 0,0 Z" /><g
+								   id="g14"><g
+									 clip-path="url(#clipPath18)"
+									 id="g16"><g
+									   transform="translate(551.426,639.9885)"
+									   id="g22"><path
+										 id="path24"
+										 style="fill:#CC6000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+										 d="m 0,0 -333.511,0.01 c -49.437,-0.117 -89.821,-39.987 -89.913,-89.429 l -0.002,-332.471 c 0.02,-49.576 40.552,-90.097 90.133,-90.097 l 332.267,0 c 49.593,0 89.6,40.541 89.6,90.133 l 0,332.267 C 88.574,-40.337 49.116,-0.548 0,0" /></g><g
+									   transform="translate(432.9905,524.005)"
+									   id="g26"><path
+										 id="path28"
+										 style="fill:#f28a2e;fill-opacity:1;fill-rule:evenodd;stroke:none"
+										 d="m 0,0 0,-178.494 c 0,-21.534 -4.045,-37.183 -12.107,-46.905 -8.059,-9.724 -21.184,-15.593 -36.891,-15.593 -15.708,0 -28.817,5.869 -36.876,15.593 -8.062,9.722 -12.123,25.371 -12.123,46.905 l 0,178.494 -81.997,0 0,-184.994 c 0,-39.87 10.416,-70.409 32.723,-91.663 22.307,-21.253 56.713,-32.333 98.273,-32.333 41.559,0 75.981,11.08 98.288,32.333 22.308,21.254 32.707,51.793 32.707,91.663 L 81.997,0 0,0 Z" /></g></g></g></g>
+							</svg>
+
+
+
+							<aside class="notes">
+
+								when we finally decided to deploy our first node app in production, <br>
+								the
+
+							</aside>
+
+						</section>
+
+						<section data-background="#f28a2e" class="orange">
+
+							<h2>Sysop requirement</h2>
+
+							<p>“what happens when an npm install dies<br/> during a major deployment?”</p>
+							<p class="fragment">“we're f**ked”</p>
+
+							<aside class="notes">
+								the sysop team wanted to be sure, that the deployment process <br>
+								cannot be affected by thirdparty resources
+								<br>
+								<br>
+								after a bit of a search and try, we chose sinopia
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M0 2v28h32v-28h-32zM30 28h-28v-24h28v24zM28 6h-24v20h24v-20zM14 16h-2v2h-2v2h-2v-2h2v-2h2v-2h-2v-2h-2v-2h2v2h2v2h2v2zM22 20h-6v-2h6v2z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+						<section data-background="#f28a2e" class="orange">
+
+							<h1>Sinopia</h1>
+
+							<p><a href="https://github.com/rlidwka/sinopia">github.com/rlidwka/sinopia</a></p>
+
+
+							<aside class="notes">
+								take a look at it at github
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM25.502 25.502c-1.235 1.235-2.672 2.204-4.272 2.881-0.406 0.172-0.819 0.323-1.238 0.453v-2.398c0-1.26-0.432-2.188-1.297-2.781 0.542-0.052 1.039-0.125 1.492-0.219s0.932-0.229 1.438-0.406 0.958-0.388 1.359-0.633 0.786-0.563 1.156-0.953 0.68-0.833 0.93-1.328 0.448-1.089 0.594-1.781 0.219-1.456 0.219-2.289c0-1.615-0.526-2.99-1.578-4.125 0.479-1.25 0.427-2.609-0.156-4.078l-0.391-0.047c-0.271-0.031-0.758 0.083-1.461 0.344s-1.492 0.688-2.367 1.281c-1.24-0.344-2.526-0.516-3.859-0.516-1.344 0-2.625 0.172-3.844 0.516-0.552-0.375-1.075-0.685-1.57-0.93s-0.891-0.411-1.188-0.5-0.573-0.143-0.828-0.164-0.419-0.026-0.492-0.016-0.125 0.021-0.156 0.031c-0.583 1.479-0.635 2.839-0.156 4.078-1.052 1.135-1.578 2.51-1.578 4.125 0 0.833 0.073 1.596 0.219 2.289s0.344 1.286 0.594 1.781 0.56 0.938 0.93 1.328 0.755 0.708 1.156 0.953 0.854 0.456 1.359 0.633 0.984 0.313 1.438 0.406 0.95 0.167 1.492 0.219c-0.854 0.583-1.281 1.51-1.281 2.781v2.445c-0.472-0.14-0.937-0.306-1.394-0.5-1.6-0.677-3.037-1.646-4.272-2.881s-2.204-2.672-2.881-4.272c-0.7-1.655-1.055-3.414-1.055-5.23s0.355-3.575 1.055-5.23c0.677-1.6 1.646-3.037 2.881-4.272s2.672-2.204 4.272-2.881c1.655-0.7 3.415-1.055 5.23-1.055s3.575 0.355 5.23 1.055c1.6 0.677 3.037 1.646 4.272 2.881s2.204 2.672 2.881 4.272c0.7 1.655 1.055 3.415 1.055 5.23s-0.355 3.575-1.055 5.23c-0.677 1.6-1.646 3.037-2.881 4.272z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+						<section data-background="#f28a2e" class="orange">
+
+							<h2>Sinopia</h2>
+
+							<ul>
+								<li>caching registry</li>
+								<li>use with chef/docker</li>
+								<li>simple storage</li>
+							</ul>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M31.342 25.559l-14.392-12.336c0.67-1.259 1.051-2.696 1.051-4.222 0-4.971-4.029-9-9-9-0.909 0-1.787 0.135-2.614 0.386l5.2 5.2c0.778 0.778 0.778 2.051 0 2.828l-3.172 3.172c-0.778 0.778-2.051 0.778-2.828 0l-5.2-5.2c-0.251 0.827-0.386 1.705-0.386 2.614 0 4.971 4.029 9 9 9 1.526 0 2.963-0.38 4.222-1.051l12.336 14.392c0.716 0.835 1.938 0.882 2.716 0.104l3.172-3.172c0.778-0.778 0.731-2-0.104-2.716z" fill="#000000"></path>
+							</svg>
+
+							<aside class="notes">
+								<ul>
+									<li>caching registry</li>
+									<li>configured with chef/docker</li>
+									<li>simple file based backup of private and cached modules</li>
+									<li>use of some kind of a naming convention, to prevent accidental conflicts with a non-private module</li>
+								</ul>
+							</aside>
+
+						</section>
+
+
+				<section data-background="#91b31b" class="green">
+
+					<h1>Working with Sinopia</h1>
+
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M29.181 19.070c-1.679-2.908-0.669-6.634 2.255-8.328l-3.145-5.447c-0.898 0.527-1.943 0.829-3.058 0.829-3.361 0-6.085-2.742-6.085-6.125h-6.289c0.008 1.044-0.252 2.103-0.811 3.070-1.679 2.908-5.411 3.897-8.339 2.211l-3.144 5.447c0.905 0.515 1.689 1.268 2.246 2.234 1.676 2.903 0.672 6.623-2.241 8.319l3.145 5.447c0.895-0.522 1.935-0.82 3.044-0.82 3.35 0 6.067 2.725 6.084 6.092h6.289c-0.003-1.034 0.259-2.080 0.811-3.038 1.676-2.903 5.399-3.894 8.325-2.219l3.145-5.447c-0.899-0.515-1.678-1.266-2.232-2.226zM16 22.479c-3.578 0-6.479-2.901-6.479-6.479s2.901-6.479 6.479-6.479c3.578 0 6.479 2.901 6.479 6.479s-2.901 6.479-6.479 6.479z" fill="#000000"></path>
+					</svg>
+
+				</section>
+
+
+						<section data-background="#91b31b" class="green">
+
+							<h2>Authentication</h2>
+
+							<p>simple adduser</p>
+
+							<p>publisher/reader rights</p>
+
+							<p>since npm 1.5-alpha (v2.0.0) users can <br/>scope credentials to different registries</p>
+
+							<aside class="notes">
+								users can use npm adduser to log in to the registry, they user whatever credential they want,
+								then we set those users we want to give publish rights to the private reg
+
+								this is possible because of the npm 1.5 or later, 2.0
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M22.969 25.168c-0.592-0.093-0.606-1.708-0.606-1.708s1.74-1.708 2.119-4.005c1.020 0 1.65-2.442 0.63-3.301 0.043-0.904 1.311-7.099-5.112-7.099s-5.155 6.195-5.112 7.099c-1.020 0.859-0.39 3.301 0.63 3.301 0.379 2.297 2.12 4.005 2.12 4.005s-0.014 1.615-0.606 1.708c-1.908 0.301-9.031 3.416-9.031 6.832h24c0-3.416-7.124-6.531-9.031-6.832zM10.752 25.713c1.378-0.848 3.051-1.635 4.423-2.107-0.492-0.701-1.040-1.654-1.385-2.783-0.481-0.393-0.873-0.954-1.125-1.644-0.252-0.691-0.348-1.464-0.269-2.178 0.056-0.512 0.202-0.99 0.427-1.409-0.136-1.456-0.232-4.314 1.639-6.398 0.725-0.808 1.642-1.389 2.741-1.74-0.196-2.024-1.224-4.399-5.202-4.399-6.424 0-5.155 6.195-5.112 7.099-1.020 0.859-0.39 3.301 0.63 3.301 0.379 2.297 2.12 4.005 2.12 4.005s-0.014 1.615-0.606 1.708c-1.908 0.301-9.031 3.416-9.031 6.832h10.3c0.147-0.096 0.297-0.192 0.452-0.287z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+						<section data-background="#91b31b" class="green">
+
+							<h2>Per-project configuration</h2>
+
+							<p>
+								<strong>.npmrc</strong>
+								<br />
+								per project registry configuration since v1.4.11
+							</p>
+
+							<p>
+								<strong>package.json</strong>
+								<br />
+								use ‘publishConfig’
+							</p>
+
+							<aside class="notes">
+								you can set a project to use a private reg several ways
+							</aside>
+
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M12 19.108v-3.57c0-0.473 0.209-0.92 0.589-1.259s0.881-0.526 1.411-0.526v-1.785c-2.2 0-4 1.606-4 3.569v2.677c0 0.493-0.448 0.892-1 0.892h-1v1.785h1c0.552 0 1 0.4 1 0.892v2.677c0 1.963 1.8 3.569 4 3.569v-1.785c-0.53 0-1.031-0.187-1.411-0.526s-0.589-0.786-0.589-1.259v-3.57c0-0.493-0.448-0.892-1-0.892 0.552 0 1-0.4 1-0.892zM20 20.892v3.57c0 0.473-0.209 0.92-0.589 1.259s-0.881 0.526-1.411 0.526v1.785c2.2 0 4-1.606 4-3.569v-2.677c0-0.493 0.448-0.892 1-0.892h1v-1.785h-1c-0.552 0-1-0.4-1-0.892v-2.677c0-1.963-1.8-3.569-4-3.569v1.785c0.53 0 1.031 0.187 1.411 0.526s0.589 0.786 0.589 1.259v3.57c0 0.493 0.448 0.892 1 0.892-0.552-0-1 0.4-1 0.892zM28.232 6.232l-4.465-4.464c-0.972-0.972-2.893-1.768-4.268-1.768h-15c-1.375 0-2.5 1.125-2.5 2.5v27c0 1.375 1.125 2.5 2.5 2.5h23c1.375 0 2.5-1.125 2.5-2.5v-19c0-1.375-0.796-3.296-1.768-4.268zM26.818 7.646c0.098 0.098 0.195 0.218 0.29 0.354h-5.108v-5.108c0.136 0.095 0.256 0.192 0.354 0.29l4.465 4.464zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5h15c0.151 0 0.32 0.019 0.5 0.053v7.947h7.947c0.034 0.18 0.053 0.349 0.053 0.5v19z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+						<section data-background="#91b31b" class="green">
+
+							<h2>Publish - unpublish</h2>
+
+							<pre><code class="bash" data-trim contenteditable style="font-size: 18px;">
+
+								npm publish --registry http://your-own.registry.url modulename
+
+							</code></pre>
+
+							<pre><code class="bash" data-trim contenteditable style="font-size: 18px;">
+
+								npm unpublish --force --registry http://your-own.registry.url modulename
+
+							</code></pre>
+
+							<aside class="notes">
+								its as easy as you would do it with the regular npm, just publish,
+								<br>
+								if the module you're publishing is bound to the private registry (npmrc or publishconfig), it will be available only there
+								<br>
+								<br>
+								unpublishing is also done the same way npm does, and if you use the --force parameter,
+								you can purge cached public modules from the sinopia mirror
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M27.883 12.078c0.076-0.347 0.117-0.708 0.117-1.078 0-2.761-2.239-5-5-5-0.444 0-0.875 0.058-1.285 0.167-0.775-2.417-3.040-4.167-5.715-4.167-2.73 0-5.033 1.823-5.76 4.318-0.711-0.207-1.462-0.318-2.24-0.318-4.418 0-8 3.582-8 8s3.582 8 8 8h4v6h8v-6h7c2.761 0 5-2.239 5-5 0-2.46-1.777-4.505-4.117-4.922zM18 20v6h-4v-6h-5l7-7 7 7h-5z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+						<section data-background="#91b31b" class="green">
+
+							<h2>Security</h2>
+
+							<p>
+								Ours only accessible <br>from a well defined domain / ip pool
+							</p>
+
+
+							<aside class="notes">
+
+								the only security setting sinopia itself has, was mentioned before, when i was talking about authenticaton:
+								<br>
+								you can tell which users can publish modules to the sinopia registry
+								<br>
+								but apart from this, anyone can access the server, even your private modules published on it
+								<br>
+								so for security reasons, we allow access to it only from our company ip pool,
+								so we, and the deployment servers can use it
+
+							</aside>
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M31.317 9.82l-3.16-3.159c-0.775-0.775-2.043-2.043-2.818-2.818l-3.16-3.159c-0.775-0.775-2.155-0.911-3.067-0.304l-8.639 5.759c-0.912 0.608-1.257 1.907-0.767 2.887l2.203 4.405c0.067 0.135 0.145 0.278 0.231 0.427l-11.142 11.142-1 7h6v-2h4v-4h4v-4h4v-2.225c0.2 0.119 0.392 0.226 0.569 0.314l4.405 2.203c0.98 0.49 2.279 0.145 2.887-0.767l5.759-8.639c0.608-0.912 0.471-2.292-0.304-3.066zM4.707 26.707l-1.414-1.414 9.737-9.737 1.414 1.414-9.737 9.737zM28.657 13.243l-1.414 1.414c-0.389 0.389-1.025 0.389-1.414 0l-8.485-8.485c-0.389-0.389-0.389-1.025 0-1.414l1.414-1.414c0.389-0.389 1.025-0.389 1.414 0l8.485 8.485c0.389 0.389 0.389 1.025 0 1.414z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+				<section data-background="#539eec" class="blue">
+
+					<h1>Usecases</h1>
+
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M30.5 24h-0.5v-6.5c0-1.93-1.57-3.5-3.5-3.5h-8.5v-4h0.5c0.825 0 1.5-0.675 1.5-1.5v-5c0-0.825-0.675-1.5-1.5-1.5h-5c-0.825 0-1.5 0.675-1.5 1.5v5c0 0.825 0.675 1.5 1.5 1.5h0.5v4h-8.5c-1.93 0-3.5 1.57-3.5 3.5v6.5h-0.5c-0.825 0-1.5 0.675-1.5 1.5v5c0 0.825 0.675 1.5 1.5 1.5h5c0.825 0 1.5-0.675 1.5-1.5v-5c0-0.825-0.675-1.5-1.5-1.5h-0.5v-6h8v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v5c0 0.825 0.675 1.5 1.5 1.5h5c0.825 0 1.5-0.675 1.5-1.5v-5c0-0.825-0.675-1.5-1.5-1.5h-0.5v-6h8v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v5c0 0.825 0.675 1.5 1.5 1.5h5c0.825 0 1.5-0.675 1.5-1.5v-5c0-0.825-0.675-1.5-1.5-1.5zM6 30h-4v-4h4v4zM18 30h-4v-4h4v4zM14 8v-4h4v4h-4zM30 30h-4v-4h4v4z" fill="#000000"></path>
+					</svg>
+
+				</section>
+
+
+						<section data-background="#539eec" class="blue">
+
+							<h2>you can do...</h2>
+
+
+							<p>private modules</p>
+							<p class="fragment">(obviously)</p>
+
+							<aside class="notes">
+								actually npm HAS a private setting in package.json, but only to prevent you from accidental npm publish
+							</aside>
+
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M18.5 14h-0.5v-6c0-3.308-2.692-6-6-6h-4c-3.308 0-6 2.692-6 6v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v15c0 0.825 0.675 1.5 1.5 1.5h17c0.825 0 1.5-0.675 1.5-1.5v-15c0-0.825-0.675-1.5-1.5-1.5zM12 28h-4l0.87-4.35c-0.525-0.36-0.87-0.965-0.87-1.65 0-1.105 0.895-2 2-2s2 0.895 2 2c0 0.685-0.345 1.29-0.87 1.65l0.87 4.35zM14 14h-8v-6c0-1.103 0.897-2 2-2h4c1.103 0 2 0.897 2 2v6z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+						<section data-background="#539eec" class="blue">
+
+							<h2>you can do...</h2>
+
+							<p>Versioned modules for deployment </p>
+							<p class="fragment">Configuration management and distribution</p>
+
+
+							<aside class="notes">
+								you can do your own modules in your infrastructure,
+								<br>
+								for example for your microservices,
+								and you can handle several versions and tags over a development and deployment cycle
+
+								<br>
+								<br>
+
+								you can also create versioned configuration modules, and distribute them with your npm,
+								later on i'll show you an example, how we do this here
+
+							</aside>
+
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M32 0v12l-4.321-4.321-6.625 6.625-3.359-3.359 6.625-6.625-4.321-4.321zM7.679 4.321l6.625 6.625-3.359 3.359-6.625-6.625-4.321 4.321v-12h12zM27.679 24.321l4.321-4.321v12h-12l4.321-4.321-6.625-6.625 3.359-3.359zM14.304 21.054l-6.625 6.625 4.321 4.321h-12v-12l4.321 4.321 6.625-6.625z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+						<section data-background="#539eec" class="blue">
+
+							<h2>you can do...</h2>
+
+							<p>Not just backend modules</p>
+							<p>Front-end module registry</p>
+
+							<aside class="notes">
+								why not? store anything that javascript in npm
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M32 26v-24h-32v24h14v2h-6v2h16v-2h-6v-2h14zM4 6h24v16h-24v-16z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+						<section data-background="#539eec" class="blue">
+
+							<h2>you can...</h2>
+
+
+							<p>Prepare for the open source world</p>
+
+							<p class="fragment">Test, use, then go open source</p>
+							<p class="fragment">Get used to the tools, workflow and mindset</p>
+
+							<aside class="notes">
+								use and test your modules, even in production before hardening them and adding them to the public registry
+
+								not just code, but the workflow and mindset too, that is common with opensourced and maintained npm modules
+							</aside>
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M16 25.997c-0.599 0-1.197-0.31-1.817-0.93-0.244-0.244-0.244-0.64 0-0.884s0.64-0.244 0.884 0c0.381 0.382 0.687 0.567 0.933 0.567s0.552-0.185 0.933-0.567c0.244-0.244 0.64-0.244 0.884 0s0.244 0.64 0 0.884c-0.62 0.62-1.218 0.93-1.817 0.93zM0 16.422c0 1.559 0.133 2.973 0.4 4.24s0.642 2.367 1.125 3.298c0.483 0.931 1.094 1.747 1.833 2.448s1.542 1.279 2.408 1.733c0.867 0.454 1.858 0.822 2.975 1.102s2.253 0.477 3.408 0.589c1.156 0.112 2.428 0.168 3.817 0.168s2.664-0.056 3.825-0.168c1.161-0.112 2.3-0.308 3.417-0.589s2.111-0.648 2.983-1.102c0.872-0.454 1.681-1.032 2.425-1.733s1.358-1.517 1.842-2.448c0.483-0.931 0.861-2.030 1.133-3.298s0.408-2.681 0.408-4.24c0-2.793-0.867-5.199-2.6-7.218 0.1-0.269 0.186-0.578 0.258-0.925s0.142-0.838 0.208-1.472c0.067-0.634 0.042-1.366-0.075-2.196s-0.336-1.677-0.658-2.541l-0.25-0.051c-0.167-0.034-0.439-0.022-0.817 0.034s-0.819 0.157-1.325 0.303c-0.506 0.146-1.158 0.435-1.958 0.867s-1.644 0.979-2.533 1.641c-1.511-0.46-3.594-0.941-6.25-0.941s-4.744 0.481-6.267 0.941c-0.889-0.662-1.736-1.206-2.542-1.632s-1.45-0.718-1.933-0.875c-0.483-0.157-0.931-0.258-1.342-0.303s-0.675-0.059-0.792-0.042c-0.117 0.017-0.203 0.036-0.258 0.059-0.322 0.864-0.544 1.711-0.667 2.541s-0.15 1.559-0.083 2.187c0.067 0.628 0.139 1.122 0.217 1.481s0.167 0.667 0.267 0.925c-1.733 2.008-2.6 4.414-2.6 7.218zM4.267 19.981c0-1.813 0.667-3.457 2-4.933 0.4-0.45 0.864-0.791 1.392-1.022s1.128-0.363 1.8-0.394c0.672-0.031 1.314-0.025 1.925 0.019s1.367 0.103 2.267 0.178c0.9 0.075 1.678 0.113 2.333 0.113s1.433-0.037 2.333-0.113c0.9-0.075 1.656-0.134 2.267-0.178s1.253-0.050 1.925-0.019c0.672 0.031 1.275 0.163 1.808 0.394s1 0.572 1.4 1.022c1.333 1.476 2 3.12 2 4.933 0 1.063-0.111 2.010-0.333 2.842s-0.503 1.529-0.842 2.091c-0.339 0.563-0.814 1.038-1.425 1.426s-1.203 0.688-1.775 0.9c-0.572 0.212-1.311 0.378-2.217 0.497s-1.717 0.191-2.433 0.216c-0.717 0.025-1.619 0.038-2.708 0.038s-1.989-0.013-2.7-0.038c-0.711-0.025-1.519-0.097-2.425-0.216s-1.644-0.285-2.217-0.497c-0.572-0.213-1.164-0.513-1.775-0.9s-1.086-0.863-1.425-1.426c-0.339-0.563-0.62-1.26-0.842-2.091s-0.333-1.779-0.333-2.842zM8 19c0-1.657 0.895-3 2-3s2 1.343 2 3c0 1.657-0.895 3-2 3s-2-1.343-2-3zM20 19c0-1.657 0.895-3 2-3s2 1.343 2 3c0 1.657-0.895 3-2 3s-2-1.343-2-3z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+				<section data-background="#3fbcb3" class="teal">
+
+					<h1>Examples</h1>
+
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M4 16l8-8h-4l-8 8 8 8h4zM24 8h-4l8 8-8 8h4l8-8zM17 4l-5 24h3l5-24z" fill="#000000"></path>
+					</svg>
+
+				</section>
+
+
+						<section data-background="#3fbcb3" class="teal">
+
+							<h2>Configuration management and distribution</h2>
+
+							<p>This is how we distribute configurations for our node apps</p>
+
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M32 0v12l-4.321-4.321-6.625 6.625-3.359-3.359 6.625-6.625-4.321-4.321zM7.679 4.321l6.625 6.625-3.359 3.359-6.625-6.625-4.321 4.321v-12h12zM27.679 24.321l4.321-4.321v12h-12l4.321-4.321-6.625-6.625 3.359-3.359zM14.304 21.054l-6.625 6.625 4.321 4.321h-12v-12l4.321 4.321 6.625-6.625z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+						<section data-background="svg/dist1.svg" class="teal">
+							<aside class="notes">
+
+								deployment
+
+								staging servers:
+								<ul>
+									<li>feature</li>
+									<li>beta</li>
+									<li>live</li>
+								</ul>
+
+								<p>different tags and branches dedicated to each</p>
+								<p>our SCM acts as a full deployment system, git commits trigger code build and deployment</p>
+							</aside>
+
+						</section>
+
+						<section data-background="svg/dist2.svg" class="teal">
+							<aside class="notes">
+								with node apps, npm came in the picture
+							</aside>
+
+						</section>
+
+						<section data-background="svg/dist3.svg" class="teal">
+							<aside class="notes">
+								using package.json we can set module versions to deployment stages
+							</aside>
+
+						</section>
+
+						<section data-background="svg/dist4.svg" class="teal">
+							<aside class="notes">
+								let's say we've patched a module in our npm registry
+							</aside>
+						</section>
+
+
+						<section data-background="svg/dist5.svg" class="teal">
+							<aside class="notes">
+								using only dependency entries in package.json,
+								we test that module on a feature cluster
+							</aside>
+						</section>
+
+
+						<section data-background="svg/dist6.svg" class="teal">
+							<aside class="notes">
+								then we let some traffic on it, using our beta cluster
+							</aside>
+						</section>
+
+
+						<section data-background="svg/dist7.svg" class="teal">
+							<aside class="notes">
+								if all goes well, the patched module can do it's job in production
+							</aside>
+						</section>
+
+
+						<section data-background="#3fbcb3" class="teal">
+
+							<h2>Configuration management and distribution</h2>
+
+							<p>Works with Modules,
+								<br />or even better:
+								<br>Configurations
+							</p>
+
+							<aside class="notes">
+
+								we've created configuration modules for our apps, that handle context,
+								updated via npm
+
+							</aside>
+
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M32 0v12l-4.321-4.321-6.625 6.625-3.359-3.359 6.625-6.625-4.321-4.321zM7.679 4.321l6.625 6.625-3.359 3.359-6.625-6.625-4.321 4.321v-12h12zM27.679 24.321l4.321-4.321v12h-12l4.321-4.321-6.625-6.625 3.359-3.359zM14.304 21.054l-6.625 6.625 4.321 4.321h-12v-12l4.321 4.321 6.625-6.625z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+							<section data-background="#3fbcb3" class="teal">
+
+								<h2>Front-end Modules</h2>
+
+								<p>Internal ‘bower’ using our private npm registry</p>
+
+								<p>Flat dep tree</p>
+
+								<p>cli, or package.json</p>
+
+								<p>This is also a problem at npm</p>
+
+
+							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+								<g id="icomoon-ignore">
+								</g>
+								<path d="M32 26v-24h-32v24h14v2h-6v2h16v-2h-6v-2h14zM4 6h24v16h-24v-16z" fill="#000000"></path>
+							</svg>
+
+						</section>
+
+
+				<section data-background="#eeece4" class="light">
+
+					<h1>Finally</h1>
+
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M20.586 23.414l-6.586-6.586v-8.828h4v7.172l5.414 5.414zM16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 28c-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12s-5.373 12-12 12z" fill="#000000"></path>
+					</svg>
+
+				</section>
+
+					<section data-background="#eeece4" class="light">
+
+						<h2>Drawbacks</h2>
+
+						<p>Feature lag</p>
+						<p>Deal with securing and hosting and backup</p>
+
+						<aside class="notes">
+
+							<p>features are trickling down from npm into the private reg apps</p>
+							<p>you have to deal with securing and hosting and backup</p>
+
+						</aside>
+
+						<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+							<g id="icomoon-ignore">
+							</g>
+							<path d="M16 4.96l-10.776 23.040h21.552l-10.776-23.040zM16 0v0c0.69 0 1.379 0.465 1.903 1.395l13.659 27.222c1.047 1.86 0.156 3.383-1.978 3.383h-27.166c-2.135 0-3.025-1.522-1.978-3.383l13.659-27.222c0.523-0.93 1.213-1.395 1.903-1.395zM14 24c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM16 12c1.105 0 2 0.895 2 2l-0.625 6h-2.75l-0.625-6c0-1.105 0.895-2 2-2z" fill="#000000"></path>
+						</svg>
+
+					</section>
+
+					<section data-background="#eeece4" class="light">
+
+						<h2>The Future</h2>
+
+						<p>npm is working on this!</p>
+						<ul>
+							<li class="fragment">scoped packages (prefixed with your org)</li>
+						</ul>
+
+						<aside class="notes">
+
+							it started with scoped packages, which is similar to a namespace,
+							prefixed to every module that belonged to an organisation
+							<br>
+							<br>
+							scopes elliminates the module name conflict issues with other registries
+							<br>
+							<br>
+							then npme gone public
+
+
+						</aside>
+
+						<svg class="background-svg"  style="width: 95%;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="481" height="188" viewBox="0 0 481 188">
+							<g id="icomoon-ignore">
+							</g>
+								<path d="M0,0 L500,0 L500,168 L250,168 L250,195 L139,195 L139,168 L0,168 Z M28.304251,139.493165 L83.536238,139.49349 L83.5362388,55.5592922 L111.304251,55.5592922 L111.304251,139.493491 L138.822477,139.493491 L138.822477,28.4929443 L28.304251,28.4929443 Z M166.333333,28 L166.666667,168 L221.666667,168 L221.666667,140.067308 L277.345845,140.067308 L277.345845,28 Z M221,55 L250,55 L250,112 L221,112 Z M305.333333,28 L305.333333,139 L360.664651,139 L360.664651,55.666008 L388.33133,55.666008 L388.33133,139.000547 L415.967888,139.000547 L415.967888,56 L443.664659,56 L443.664659,139 L471.338699,139 L471.338699,28 Z M305.333333,28" id="Rectangle 1" fill="#CD3632"></path>
+						</svg>
+
+					</section>
+
+					<section data-background="#eeece4" class="light">
+
+						<h2>npme</h2>
+
+						<p>npme (as enterprise)</p>
+
+						<ul>
+							<li class="fragment">use it like npm <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">you host it <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">selective mirror <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">OAuth2, more is coming <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">developed by npm - no feature lag <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">still in trial <img src="svg/close.svg" class="checkin fragment"></li>
+						</ul>
+
+						<aside class="notes">
+
+							let's see how it compares to our currently used solution
+							<br>
+							<br>
+							you can use it like npm, like u did before, check
+							<br>
+							<br>
+							self hosted, you deal with uptime, availability, security, policies, etcetc , check
+							<br>
+							<br>
+							npme is a s selective mirror, you can configure which modules has be available on your registry,
+							<br>
+							so mirrors only what is needed, check
+							<br>
+							<br>
+							it has Oauth2 authentication, you can write your own authentication plugins for your org, but other supported auth is on the way
+							<br>
+							<br>
+							it's developed by npm, so there supposed to be no feature lag, what's new in npm, will also be available in here
+							<br>
+							<br>
+							err, it's not ready yet
+
+
+						</aside>
+
+						<svg class="background-svg"  style="width: 95%;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="481" height="188" viewBox="0 0 481 188">
+							<g id="icomoon-ignore">
+							</g>
+							<path d="M0,0 L500,0 L500,168 L250,168 L250,195 L139,195 L139,168 L0,168 Z M28.304251,139.493165 L83.536238,139.49349 L83.5362388,55.5592922 L111.304251,55.5592922 L111.304251,139.493491 L138.822477,139.493491 L138.822477,28.4929443 L28.304251,28.4929443 Z M166.333333,28 L166.666667,168 L221.666667,168 L221.666667,140.067308 L277.345845,140.067308 L277.345845,28 Z M221,55 L250,55 L250,112 L221,112 Z M305.333333,28 L305.333333,139 L360.664651,139 L360.664651,55.666008 L388.33133,55.666008 L388.33133,139.000547 L415.967888,139.000547 L415.967888,56 L443.664659,56 L443.664659,139 L471.338699,139 L471.338699,28 Z M305.333333,28" id="Rectangle 1" fill="#CD3632"></path>
+						</svg>
+
+					</section>
+
+					<section data-background="#eeece4" class="light">
+
+						<h2>npme</h2>
+
+						<p>It's not free</p>
+
+						<p class="fragment">Support npm, use a good solution</p>
+
+						<p class="fragment"><small>no price information yet</small></p>
+
+						<aside class="notes">
+							it's not free, but if you think about it, npminc has to pay their bills, and keep npm up and running,
+							<br>
+							<br>
+							so if your org can afford it, consider this as support, giving back to them, in which, gives you somethig useful in return
+
+							<br>
+							<br>
+
+
+						</aside>
+
+						<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+							<g id="icomoon-ignore">
+							</g>
+							<path d="M29 4h-26c-1.65 0-3 1.35-3 3v18c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-18c0-1.65-1.35-3-3-3zM3 6h26c0.542 0 1 0.458 1 1v3h-28v-3c0-0.542 0.458-1 1-1zM29 26h-26c-0.542 0-1-0.458-1-1v-9h28v9c0 0.542-0.458 1-1 1zM4 20h2v4h-2zM8 20h2v4h-2zM12 20h2v4h-2z" fill="#000000"></path>
+						</svg>
+
+
+					</section>
+
+
+				<section data-background="#eeece4" class="light">
+
+					<h1>Thank you!</h1>
+
+					<p><small><a href="https://twitter.com/_Nec">@_Nec</a> </small></p>
+
+					<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+						<g id="icomoon-ignore">
+						</g>
+						<path d="M16 32c8.837 0 16-7.163 16-16s-7.163-16-16-16-16 7.163-16 16 7.163 16 16 16zM16 3c7.18 0 13 5.82 13 13s-5.82 13-13 13-13-5.82-13-13 5.82-13 13-13zM16 18.711c3.623 0 7.070-0.963 10-2.654-0.455 5.576-4.785 9.942-10 9.942s-9.544-4.371-10-9.947c2.93 1.691 6.377 2.658 10 2.658zM8 11c0-1.657 0.895-3 2-3s2 1.343 2 3c0 1.657-0.895 3-2 3s-2-1.343-2-3zM20 11c0-1.657 0.895-3 2-3s2 1.343 2 3c0 1.657-0.895 3-2 3s-2-1.343-2-3z" fill="#000000"></path>
+					</svg>
+
+				</section>
+
+			</div>
 
 		</div>
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
 
-		  ga('create', 'UA-43375306-1', 'revealjs.com');
-		  ga('send', 'pageview');
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+				backgroundTransition: 'none',
+				transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
 		</script>
+
 	</body>
 </html>

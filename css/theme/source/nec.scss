@@ -1,0 +1,175 @@
+/**
+ * Solarized Light theme for reveal.js.
+ * Author: Achim Staebler
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+//@import url(http://fonts.googleapis.com/css?family=Special+Elite|Open+Sans:700,400);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,700);
+
+/**
+ * Solarized colors by Ethan Schoonover
+ */
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+
+
+
+$foregroundColor01: #ffffff;
+$foregroundColor02: #2c3c4c;
+$backgroundColor01: #539eec;
+
+// Solarized colors
+$base01:    #539eec;
+$base03:    #539eec;
+$base02:    #073642;
+$base00:    #657b83;
+
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+
+
+$mainFont: 'Open Sans', sans-serif;
+$headingFont: 'Open Sans Condensed', sans-serif;
+
+// Override theme settings (see ../template/settings.scss)
+$mainColor: $foregroundColor01;
+$headingColor: $foregroundColor01;
+$headingTextShadow: none;
+$backgroundColor: $backgroundColor01;
+$linkColor: #fff;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: $magenta;
+
+$headingMargin: 0 0 1em 0;
+$headingH1Margin: 0 0 .2em 0;
+
+$progressColor: #fff;
+
+.reveal .slides section.light {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p {
+    color: $foregroundColor02;
+    text-shadow: none;
+  }
+
+  a {
+    color: #38f;
+  }
+}
+
+.reveal {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: $headingMargin
+  }
+}
+
+// Background generator
+// @mixin bodyBackground() {
+// 	@include radial-gradient( rgba($base3,1), rgba(lighten($base3, 20%),1) );
+// }
+
+.reveal section p img,
+.reveal section li img {
+  border: none;
+  box-shadow: none;
+  margin: 0 5px;
+}
+
+img.checkin {
+  position: absolute;
+  left: 0;
+
+}
+
+
+.background-svg {
+  position: absolute;
+  width: 84%;
+  height: 328%;
+  right: -40%;
+  top: -80%;
+  z-index: -1;
+}
+
+.background-svg path {
+  //fill: #2c3c4c;
+}
+
+
+.light .background-svg path {
+  fill: #BBB9B3;
+}
+
+.orange .background-svg path {
+  fill: #CC6000;
+}
+
+.green .background-svg path {
+  fill: #688013;
+}
+
+.blue .background-svg path {
+  fill: #417CB9;
+}
+
+.teal .background-svg path {
+  fill: #2E8982;
+}
+
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; }
+
+.reveal table tr:last-child td {
+  border-bottom: none;
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
