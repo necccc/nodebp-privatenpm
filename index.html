@@ -102,6 +102,14 @@
 							<p>Has several public mirrors</p>
 
 
+							<aside class="notes">
+								over 100000 modules in the registry, some of them is not written by tj holowaychuk substack or mr tarr :)
+								<br >
+								<br >
+								it somewhat distributed, as some ppl made mirrors over the world
+							</aside>
+
+
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
 								</g>
@@ -122,6 +130,17 @@
 								<li class="fragment">you want to use npm, but internally distribute modules</li>
 								<li class="fragment">you don’t trust availability</li>
 							</ul>
+
+
+							<aside class="notes">
+
+								<ul>
+									<li>you want to do sensitive stuff</li>
+									<li>you want to do proprietary stuff</li>
+									<li>you want to use npm, but internally distribute modules</li>
+									<li>you don’t trust availability</li>
+								</ul>
+							</aside>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 								<g id="icomoon-ignore">
@@ -158,7 +177,7 @@
 							<aside class="notes">
 
 
-								in a recent blog post, she asked us not to, but still "what if"
+								in a recent blog post, she asked us not to, but still the questions "what if" and "why not" bothered me
 
 
 
@@ -197,11 +216,12 @@
 							<aside class="notes">
 
 
-								full mirror
-								tens of GBytes of data, contains every module, every version
-								caching registry
-								caches only what you need, for a given amount of time
-
+								full mirror<br />
+								tens of GBytes of data, contains every module, every version<br>
+								caching registry<br>
+								caches only what you need, for a given amount of time<br>
+<br>
+<br>
 								both can handle your own packages
 							</aside>
 
@@ -259,6 +279,15 @@
 										 d="m 0,0 0,-178.494 c 0,-21.534 -4.045,-37.183 -12.107,-46.905 -8.059,-9.724 -21.184,-15.593 -36.891,-15.593 -15.708,0 -28.817,5.869 -36.876,15.593 -8.062,9.722 -12.123,25.371 -12.123,46.905 l 0,178.494 -81.997,0 0,-184.994 c 0,-39.87 10.416,-70.409 32.723,-91.663 22.307,-21.253 56.713,-32.333 98.273,-32.333 41.559,0 75.981,11.08 98.288,32.333 22.308,21.254 32.707,51.793 32.707,91.663 L 81.997,0 0,0 Z" /></g></g></g></g>
 							</svg>
 
+
+
+							<aside class="notes">
+
+								when we finally decided to deploy our first node app in production, <br>
+								the
+
+							</aside>
+
 						</section>
 
 						<section data-background="#f28a2e" class="orange">
@@ -269,7 +298,11 @@
 							<p class="fragment">“we're f**ked”</p>
 
 							<aside class="notes">
-								our sysops came and wanted extra availability
+								the sysop team wanted to be sure, that the deployment process <br>
+								cannot be affected by thirdparty resources
+								<br>
+								<br>
+								after a bit of a search and try, we chose sinopia
 							</aside>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -288,7 +321,7 @@
 
 
 							<aside class="notes">
-								after a bit of a search and try, we chose sinopia
+								take a look at it at github
 							</aside>
 
 							<svg class="background-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -722,15 +755,14 @@
 
 						<aside class="notes">
 
-							started with scoped packages, which set a scope, similar to a namespace, prefixed to every module that belonged to an organisation
+							it started with scoped packages, which is similar to a namespace,
+							prefixed to every module that belonged to an organisation
 							<br>
 							<br>
 							scopes elliminates the module name conflict issues with other registries
 							<br>
 							<br>
 							then npme gone public
-
-							npme auth plugins for your organization
 
 
 						</aside>
@@ -750,32 +782,34 @@
 						<p>npme (as enterprise)</p>
 
 						<ul>
-							<li class="fragment">you host it, your uptime, sec, policy, etc... <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">use it like npm <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">you host it <img src="svg/checkmark.svg" class="checkin fragment"></li>
 							<li class="fragment">selective mirror <img src="svg/checkmark.svg" class="checkin fragment"></li>
-							<li class="fragment">OAuth2 auth, more is coming <img src="svg/checkmark.svg" class="checkin fragment"></li>
+							<li class="fragment">OAuth2, more is coming <img src="svg/checkmark.svg" class="checkin fragment"></li>
 							<li class="fragment">developed by npm - no feature lag <img src="svg/checkmark.svg" class="checkin fragment"></li>
 							<li class="fragment">still in trial <img src="svg/close.svg" class="checkin fragment"></li>
 						</ul>
 
 						<aside class="notes">
 
-
-							then npme gone public
+							let's see how it compares to our currently used solution
 							<br>
 							<br>
-							us just use npm, like before, check
+							you can use it like npm, like u did before, check
 							<br>
 							<br>
 							self hosted, you deal with uptime, availability, security, policies, etcetc , check
 							<br>
 							<br>
-							mirrors only what is needed, check
+							npme is a s selective mirror, you can configure which modules has be available on your registry,
+							<br>
+							so mirrors only what is needed, check
 							<br>
 							<br>
-							Oauth2 authentication, you can write auth plugins for your org, but many supported auth is on the way
+							it has Oauth2 authentication, you can write your own authentication plugins for your org, but other supported auth is on the way
 							<br>
 							<br>
-							it's developed by npm, so there's no feature lag, what's new in npm, will also be available in here
+							it's developed by npm, so there supposed to be no feature lag, what's new in npm, will also be available in here
 							<br>
 							<br>
 							err, it's not ready yet
@@ -806,6 +840,10 @@
 							<br>
 							<br>
 							so if your org can afford it, consider this as support, giving back to them, in which, gives you somethig useful in return
+
+							<br>
+							<br>
+
 
 						</aside>
 
