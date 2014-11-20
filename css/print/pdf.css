@@ -176,7 +176,7 @@ ul, ol, div, p {
 }
 .reveal section>* {
 	position: relative;
-	z-index: 1;
+	z-index: 10;
 }
 .reveal img {
 	box-shadow: none;
@@ -187,4 +187,20 @@ ul, ol, div, p {
 }
 .reveal small a {
 	font-size: 16pt !important;
+}
+
+
+.reveal .slides section .background-svg {
+	position: absolute !important;
+	width: 60%;
+	height: 200%;
+	right: -20%;
+	top: -55%;
+	z-index: 1;
+}
+
+.reveal .slides section img.checkin {
+	background: none;
+	left: -90px;
+	padding-top: 6px;
 }
