@@ -35,14 +35,15 @@ html * {
 .reveal section li img {
   border: none;
   box-shadow: none;
-  margin: 0 5px; }
+  margin: 0 5px;
+  background: none; }
 
 img.checkin {
   position: absolute;
   left: 0; }
 
 .background-svg {
-  position: absolute;
+  position: absolute !important;
   width: 84%;
   height: 328%;
   right: -40%;
@@ -85,8 +86,8 @@ img.checkin {
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #539eec;
-  background-color: #539eec; }
+  background: #fff;
+  background-color: #fff; }
 
 .reveal {
   font-family: "Open Sans", sans-serif;

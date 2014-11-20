@@ -58,7 +58,7 @@ $headingFont: 'Open Sans Condensed', sans-serif;
 $mainColor: $foregroundColor01;
 $headingColor: $foregroundColor01;
 $headingTextShadow: none;
-$backgroundColor: $backgroundColor01;
+$backgroundColor: #fff;
 $linkColor: #fff;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: $magenta;
@@ -107,6 +107,7 @@ $progressColor: #fff;
   border: none;
   box-shadow: none;
   margin: 0 5px;
+  background: none;
 }
 
 img.checkin {
@@ -117,7 +118,7 @@ img.checkin {
 
 
 .background-svg {
-  position: absolute;
+  position: absolute !important;
   width: 84%;
   height: 328%;
   right: -40%;
